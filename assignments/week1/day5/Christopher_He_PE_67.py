@@ -5,6 +5,7 @@ triangle = []
 for line in lines:
     triangle.append([int(x) for x in line.split()])
 
+# solution with memoization + recursion
 def solution(level, node, memo):
     if level >= len(triangle):
         return 0
@@ -16,4 +17,23 @@ def solution(level, node, memo):
 
     return memo[level, node]
 
-print(solution(0, 0, {}))
+# solution with dynamic programming
+def solution_with_dp(triangle):
+    n = len(triangle)
+    dp = [[0] * n] * n
+    i = len(triangle) - 1
+
+    while i >= 0:
+        for j in range(len(triangle[i])):
+            if i == len(triangle) - 1:
+                # base case
+                dp[i][j] = triangle[i][j]
+            else:
+                # recursive step
+                dp[i][j] = max(dp[i+1][j], dp[i+1][j+1]) + triangle[i][j]
+        i -= 1
+
+    return dp[0][0]
+
+print(solution_with_dp(triangle)) # 7273
+print(solution(0, 0, {})) # 7273
