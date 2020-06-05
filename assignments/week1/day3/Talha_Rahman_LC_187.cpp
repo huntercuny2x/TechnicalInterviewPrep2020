@@ -9,8 +9,8 @@ std::vector<std::string> findRepeatedDnaSequences(std::string s) {
     for(int i = 0; i < s.size(); ++i) {
         // tmp will represent the current DNA Sequence
         std::string tmp = "";
-        for(int j = i; j < i + 10 && j < s.size(); ++j) {
-            tmp += s[j];
+        if (i + 10 <= s.size()) {
+            tmp = s.substr(i, 10);
         }
         
         // if this sequence was already in the sequences set add to repeated set
