@@ -41,3 +41,9 @@ int main() {
     }
     cout << max << endl;
 }
+
+// Time Complexity = O(sqrt(n)*sqrt(m)) = n is all numbers we go through, and m is number we checking if prime, so finding all divisible numbers
+// Space Complexity = O(1)
+
+// Can get a time complexity of O(nlog log(n)) by https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+// not sure if this is worth implementing. as space is O(n) as well
