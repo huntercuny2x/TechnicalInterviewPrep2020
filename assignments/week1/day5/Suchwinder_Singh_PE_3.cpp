@@ -41,6 +41,7 @@ int main() {
     }
     cout << max << endl;
 }
+// Answer: 6857
 
 // Time Complexity = O(sqrt(n)*sqrt(m)) = n is all numbers we go through, and m is number we checking if prime, so finding all divisible numbers
 // Space Complexity = O(1)
