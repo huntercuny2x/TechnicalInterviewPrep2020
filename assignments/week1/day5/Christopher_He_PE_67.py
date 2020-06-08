@@ -20,7 +20,7 @@ def solution(level, node, memo):
 # solution with dynamic programming
 def solution_with_dp(triangle):
     n = len(triangle)
-    dp = [[0] * n] * n
+    dp = [[0 for x in range(n)] for x in range(n)]
     i = len(triangle) - 1
 
     while i >= 0:
