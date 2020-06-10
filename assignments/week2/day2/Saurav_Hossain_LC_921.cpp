@@ -8,19 +8,8 @@ public:
         
         stack<char> holdOpenOnly;
         string need = "";
-        
-        if(S[0] == ')')
-        {
-            need = need + '(';
-        }
-        
-        if(S[0] == '(')
-        {
-            holdOpenOnly.push(S[0]);
-            need = need + ')';
-        }
-        
-        for(int i = 1; i < S.length(); i++)
+       
+        for(int i = 0; i < S.length(); i++)
         {
             if(S[i] == '(')
             {
