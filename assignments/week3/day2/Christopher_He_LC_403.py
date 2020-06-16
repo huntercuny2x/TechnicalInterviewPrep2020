@@ -17,8 +17,10 @@ class Solution:
             for i in range(jump-1,jump+2):
                 if i == 0:
                     continue
+                if can_jump:
+                    break
                 if pos+i in stones:
-                    can_jump = can_jump or solution(pos+i, i, memo)
+                    can_jump = solution(pos+i, i, memo)
 
             memo[pos, jump] = can_jump
             return can_jump
